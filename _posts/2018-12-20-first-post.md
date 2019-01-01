@@ -1,6 +1,7 @@
 ---
 title: "Goodness of Fit Test (적합도 검정)"
 categories: statistics
+layout: post
 ---
 * 적합도 검정이란?
 내가 설정한 확률 모델이 이 현상(데이터)를 설명하는 데 적합한 것인가를 검정함

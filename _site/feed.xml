@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-01T18:50:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/01/01/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-01-01T18:06:14+09:00</published><updated>2019-01-01T18:06:14+09:00</updated><id>http://localhost:4000/jekyll/update/2019/01/01/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/01/01/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">정보처리기사 준비 &amp;gt; 1. 데이터베이스</title><link href="http://localhost:4000/database/2018/12/29/database.html" rel="alternate" type="text/html" title="정보처리기사 준비 &gt; 1. 데이터베이스" /><published>2018-12-29T00:00:00+09:00</published><updated>2018-12-29T00:00:00+09:00</updated><id>http://localhost:4000/database/2018/12/29/database</id><content type="html" xml:base="http://localhost:4000/database/2018/12/29/database.html">&lt;ul&gt;
+  &lt;li&gt;정보 시스템
+    &lt;ul&gt;
+      &lt;li&gt;데이터웨어 하우스 (DataWare House)
+조직이나 기업체의 중심이 되는 주요 업무 시스템에서 추출되어 새로이 생성된 데이터베이스로서 의사 결정 지원 시스템을 지원하는 주체적, 통합적, 시간적 데이터의 집합체&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터베이스의 정의
+    &lt;ul&gt;
+      &lt;li&gt;통합된 데이터 (Integrated Data)&lt;/li&gt;
+      &lt;li&gt;저장된 데이터 (Stored Data)&lt;/li&gt;
+      &lt;li&gt;운영 데이터 (Operational Data)&lt;/li&gt;
+      &lt;li&gt;공용 데이터 (Shared Data)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 베이스의 특징
+    &lt;ul&gt;
+      &lt;li&gt;실시간 접근성 (Real Time Accessibility)&lt;/li&gt;
+      &lt;li&gt;계속적인 변화 (Continuous Evolution)&lt;/li&gt;
+      &lt;li&gt;동시 공유 (Concurrent Sharing)&lt;/li&gt;
+      &lt;li&gt;내용에 의한 참조 (Content Reference)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기존의 파일 처리 방식에서의 문제점
+    &lt;ul&gt;
+      &lt;li&gt;종속성으로 인한 문제점&lt;/li&gt;
+      &lt;li&gt;중복성으로 인한 문제점
+        &lt;ul&gt;
+          &lt;li&gt;일관성&lt;/li&gt;
+          &lt;li&gt;보안성&lt;/li&gt;
+          &lt;li&gt;경제성&lt;/li&gt;
+          &lt;li&gt;무결성&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DBMS의 필수 기능
+    &lt;ul&gt;
+      &lt;li&gt;정의 (Definition)&lt;/li&gt;
+      &lt;li&gt;조작 (Manipulation)&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;제어 (Control)&lt;/p&gt;
+
+        &lt;p&gt;데이터베이스의 갱신, 삽입, 삭제 등의 연산은 DBMS의 필수 기능 중 제어 기능이다. (X) -&amp;gt; 조작&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">정보 시스템 데이터웨어 하우스 (DataWare House) 조직이나 기업체의 중심이 되는 주요 업무 시스템에서 추출되어 새로이 생성된 데이터베이스로서 의사 결정 지원 시스템을 지원하는 주체적, 통합적, 시간적 데이터의 집합체</summary></entry><entry><title type="html">Goodness of Fit Test (적합도 검정)</title><link href="http://localhost:4000/statistics/2018/12/20/first-post.html" rel="alternate" type="text/html" title="Goodness of Fit Test (적합도 검정)" /><published>2018-12-20T00:00:00+09:00</published><updated>2018-12-20T00:00:00+09:00</updated><id>http://localhost:4000/statistics/2018/12/20/first-post</id><content type="html" xml:base="http://localhost:4000/statistics/2018/12/20/first-post.html">&lt;ul&gt;
+  &lt;li&gt;적합도 검정이란?
+내가 설정한 확률 모델이 이 현상(데이터)를 설명하는 데 적합한 것인가를 검정함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;즉, 범주 안의 사례 수가 기대빈도에 맞게 분포되어 있는지를 알아봄&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;차이들을 더하면 결국은 항상 0이 되므로, 다시 실제값이 기대한 빈도와 얼마나 많이 다른가를 알아보기 위해 이 차이들을 제곱함
+또한, 같은 차이값이라도 기대빈도값이 얼마인가에 따라 그 중요도가 달라짐&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">적합도 검정이란? 내가 설정한 확률 모델이 이 현상(데이터)를 설명하는 데 적합한 것인가를 검정함</summary></entry></feed>
