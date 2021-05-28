@@ -1,0 +1,770 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Homework Assignment 4</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="377a76c9-e86c-470d-b6de-9cdc7d2b05d9" class="page mono"><header><h1 class="page-title">Homework Assignment 4</h1></header><div class="page-body"><h1 id="527de2c1-c4a4-441d-9ca7-09ba008d1c3e" class="">1. HDR Imaging</h1><h2 id="ac2afb08-b9d0-443f-b77f-bad5eed5bb7e" class="">Use <code>dcraw</code> to convert the RAW .NEF images into linear 16-bit .TIFF images</h2><p id="f15a2577-741b-478b-b7ee-59ed8776a6d8" class="">Ubuntu 20.04.2 LTS command line 환경으로 <code>dcraw</code>를 사용하였음. 사용한 flags에 대한 정보는 다음과 같음.</p><pre id="62f9535d-80ac-42c2-89b0-cc29eea1d1fd" class="code"><code>-i -v shows metadata.
+-v     Print verbose messages, not just warnings and errors.
+-q 3   Use Adaptive Homogeneity-Directed (AHD) interpolation.
+-o [0-6]
+              Select the output colorspace when the -p option is not used:
+
+                   0   Raw color (unique to each camera)
+                   1   sRGB D65 (default)
+                   2   Adobe RGB (1998) D65
+                   3   Wide Gamut RGB D65
+                   4   Kodak ProPhoto RGB D65
+                   5   XYZ
+                   6   ACES
+-w     Use  the  white  balance  specified  by  the camera.  If this is not found, print a
+       warning and use another method.
+-T     Write TIFF with metadata instead of PGM/PPM/PAM.</code></pre><figure id="c4344895-1dba-414a-a844-6a95c0308645" class="image"><a href="https://hyeonjjung.github.io/assets/images/4/Untitled.png"><img style="width:820px" src="https://hyeonjjung.github.io/assets/images/4/Untitled.png"/></a></figure><p id="cfd1f731-697a-47d6-9227-0b0d1766e46c" class="">결과적으로 사용한 flags는 <code>-v -w -T -o 1 -q 3</code> 임.</p><h2 id="582c07c8-f6d9-4a29-a024-02f8d852eef7" class="">Linearize rendered images</h2><h3 id="67536aa5-139b-4e7e-869f-01fd4a533256" class="">Image sampling</h3><p id="e251dbf7-25bb-4ade-b057-66e5eb624baa" class="">본 프로젝트에서는 16장의 고해상도 이미지를 사용하기 때문에 매우 많은 연산량을 요구함. 따라서 모든 픽셀을 사용하여 Response curve를 구하지 않고 sampling된 이미지를 사용함. 사용되는 픽셀 N은 다음과 같은 조건을 만족해야함.</p><figure id="e65d3dac-a54a-42ea-985c-8ac1b87e5e6e" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>N</mi><mo>∗</mo><mo stretchy="false">(</mo><mi>P</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>&gt;</mo><mo stretchy="false">(</mo><msub><mi>Z</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>−</mo><msub><mi>Z</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N * (P-1) &gt; (Z_{max} - Z_{min})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></div></figure><p id="4067aec7-308f-4bd1-b3d9-633681d0d265" class="">따라서 본 프로젝트에서는 N = 100 을 사용할 것임. matlab의 <code>imresize</code> 를 사용하여 subsampling을 진행하였음.</p><pre id="faed173d-c2a0-4d60-a68d-1b5eca4cbb1c" class="code"><code>R = imresize(images(:,:,1, p), [10, 10]);</code></pre><h3 id="be7fb60c-e65c-4183-b260-f01fa0b2983b" class="">Response curve</h3><p id="f2a97b11-2da2-4a55-bbd4-bb5697c8a1ee" class="">Response curve를 구하기 위하여 gsolve 함수를 정의하였음. 이전 과제와 마찬가지로 SVD를 통하여 <code>g</code> 를 구하였음.</p><pre id="7de62884-f279-4a51-9098-14b3da6984a8" class="code"><code>n = 256;
+A = zeros(size(Z, 1)*size(Z,2)+n+1, n+size(Z, 1));
+b = zeros(size(A, 1), 1); % exposure value
+
+k = 1;
+for i = 1:size(Z, 1)
+    for j = 1:size(Z, 2)
+        wij = w(Z(i, j)+1);
+        A(k, Z(i, j)+1) = wij;
+        A(k, n+i) = -wij;
+        b(k, 1) = B(j) * wij;
+        k = k+1;
+    end
+end
+A(k, 129) = 1;
+k = k+1;
+for i = 1:n-2
+    A(k, i) = l*w(i+1);
+    A(k, i+1) = -2*l*w(i+1);
+    A(k, i+2) = l*w(i+1);
+    k = k+1;
+end
+x = A\b;
+g = x(1:n, 1); % the log exposure corresponding to pixel value z
+IE = x(n+1:size(x,1), 1); % the log film irradiance at pixel location i</code></pre><p id="0af298de-2717-44cd-b85e-0e1bb30f7211" class="">이때 사용되는 weight function <code>w</code> 의 경우, 이미지 Z의 range가 0-255로 가정하고 사용의 편이를 위해서 다음과 같이 linear weighting function과 tent weighting function을 정의하였음. </p><pre id="e950f5a0-4249-42ad-9ec3-45e05744810b" class="code"><code>for i = 1:256
+    w(i) = 1;
+end
+
+for i = 1:256
+    if i &lt;= 256/2
+        w(i) = i-1;
+    else
+        w(i) = 256 - i;
+    end
+end</code></pre><h3 id="1c6c1c68-cdae-49dd-878a-116b6639526f" class="">Plot the function g</h3><p id="9a425793-14bb-42a2-a37e-64927ff17223" class="">tent weighting function을 통해서 구한 g를 plot한 결과는 다음과 같음.</p><figure id="6ee6ba4e-f14b-46d8-9253-abed0cc7323f" class="image"><a href="https://hyeonjjung.github.io/assets/images/4/Untitled%201.png"><img style="width:493px" src="https://hyeonjjung.github.io/assets/images/4/Untitled%201.png"/></a></figure><p id="a2627f73-2c6d-4cc1-bd44-4d5656a1d08a" class="">uniform weighting function을 통해서 구한 g를 plot한 결과는 다음과 같음.</p><figure id="4f739102-5e06-4c64-8573-2e540a2ff5d4" class="image"><a href="https://hyeonjjung.github.io/assets/images/4/Untitled%202.png"><img style="width:481px" src="https://hyeonjjung.github.io/assets/images/4/Untitled%202.png"/></a></figure><p id="3df74fe7-b279-43d9-a628-d3a0b247ae54" class="">uniform weighting function보다 tent weighting function을 사용하였을때 결과가 더 좋은 것을 확인할 수 있다.</p><h3 id="b9919289-e546-4865-be37-c48a3fdef325" class="">Convert the non-linear images I into linear ones</h3><p id="4a99ca29-4dcf-4354-a680-36422f088c52" class="">마지막으로 다음과 같이 non-linear image를 linear image로 변환하는 과정을 거침</p><pre id="897e06cb-4533-4ad4-8506-a8de833ecd85" class="code"><code>linear_images(w, h, 1, p) = exp(gr(images(w, h, 1, p)+1));</code></pre><h2 id="13d03da0-a588-4532-81aa-879dad3f14f8" class="">Merge exposure stack into HDR image</h2><h3 id="32eb936f-9a38-493d-b308-6358606a3a2b" class="">Weighting function</h3><p id="144082cf-984f-4d5e-a757-59db75b42ef3" class="">본 프로젝트에서는 image의 range를 [0, 255]로 가정하고 weight function을 구현하였음</p><p id="7d39e088-6d0b-4598-96e5-264c9d695555" class="">먼저 uniform weighting function의 경우 모든 경우에 대해서 weight를 1로 동일하게 두었음</p><pre id="e8ce193a-c21e-4bb3-b84c-2327a9b552a7" class="code"><code>function w = weighting_uniform(~)
+    w = 1;
+end</code></pre><p id="045a1bed-08e5-498e-94cc-02f2a29de3cd" class="">Tent weighting function의 경우 0-255 범위를 벗어나는 경우에 대해서는 0으로 처리하였음</p><pre id="6954070b-9b9b-4696-a736-967c0a2b9d9a" class="code"><code>function w = weighting_tent(z)
+Zmin = 0;
+Zmax = 255;
+if z &lt;= 255*0.5
+    w = z-Zmin;
+    if w &lt; 0
+        w = 0;
+    end
+else
+    w = Zmax-z;
+    if w &lt; 0
+        w = 0;
+    end
+end
+end</code></pre><h3 id="3ac08e4a-9aa4-4ffb-8d0f-1ae6583f4a74" class="">Linear merging</h3><p id="c251b512-07c0-47fd-bba0-ea05f97775ff" class="">linear merging의 경우 앞서 구한 linear image를 사용하여 값을 구하였음</p><pre id="4a38378b-f583-491e-902c-9c88b1fd1262" class="code"><code>for p = 1:P
+    if weighting_scheme == &quot;tent&quot;
+        top = top + weighting_tent(images(i, j, c, p))* linear_images(i, j, c, p)/EB(p);
+        bottom = bottom + weighting_tent(images(i, j, c, p));
+    else
+        top = top + weighting_uniform(images(i, j, c, p))* linear_images(i, j, c, p)/EB(p);
+        bottom = bottom + weighting_uniform(images(i, j, c, p));
+    end 
+end
+HDR_images(i, j, c) = top/bottom;</code></pre><h3 id="bd9af2a3-bb49-4833-9828-0227d6bfc315" class="">Logarithmic merging</h3><p id="c475adb7-9d58-4031-9b06-763fb9d3e986" class="">Logarithmic merging에서는 앞서 구한 linear_image에 log를 씌웠음</p><pre id="54c5236b-203a-4d4f-a9cf-2de66396c77d" class="code"><code>for p = 1:P
+    if weighting_scheme == &quot;tent&quot;
+        top = top + weighting_tent(images(i, j, c, p))*(log(linear_images(i, j, c, p)) - B(p));
+        bottom = bottom + weighting_tent(images(i, j, c, p));
+    else
+        top = top + weighting_uniform(images(i, j, c, p))*(log(linear_images(i, j, c, p)) - B(p));
+        bottom = bottom + weighting_uniform(images(i, j, c, p));
+    end
+end
+HDR_images(i, j, c) = exp(top/bottom);</code></pre><h2 id="ccebb1ca-65fb-4586-bc67-285e60c293b5" class="">Evaluation</h2><p id="c12ea388-ec59-4304-b0e8-907ebc399fb6" class="">앞서 구한 HDR 이미지들을 평가하기 위해서 이미지에 있는 color checker를 사용하여 밝기가 linear한지를 확인하였음. 먼저 color checker가 잘 보이는 이미지를 가지고 6개의 patch에 대한 좌표를 구하였음</p><pre id="fccabd83-1450-4bd7-9eee-f1e7196d12f7" class="code"><code>imshow(images(:,:,:,15)/255);
+R_list = cell(6, 1);
+for i =1:6
+    [x, y] = ginput(2);
+    x = round(x); y = round(y);
+    R_list{i} = [x(1) y(1) x(2)-x(1) y(2)-y(1)];
+end</code></pre><p id="423362e9-ddba-491c-9a99-5bb04e8f77d6" class="">이후 HDR 이미지를 XYZ color space로 바꾸어 Y값을 추출하였음</p><pre id="cdef006e-f5f9-4917-ad75-4ebf1d18db9b" class="code"><code>XYZ = rgb2xyz(HDR_images, &#x27;Colorspace&#x27;, &#x27;linear-rgb&#x27;);
+Y = XYZ(:,:,2);</code></pre><p id="771f5d6c-3fc5-443c-9947-8996e60836c9" class="">각각의 patch에 대하여 평균값을 구하고</p><pre id="1a779e08-9ef8-40ed-9e0a-23ae70cae542" class="code"><code>average_luminance = zeros(2, 6);
+for i =1:6
+    color_checker = imcrop(Y, R_list{i});
+    average_luminance(1, i) = i;
+    average_luminance(2, i) = log(mean(color_checker(:)));
+end</code></pre><p id="604b46e3-17f4-4fff-af48-4cb573d4e435" class="">6개의 평균을 가지고 linear regression을 진행하였음</p><pre id="fd657eef-5897-4f82-ade2-a45e61aff2f6" class="code"><code>mdl = fitlm(average_luminance(1, :), average_luminance(2, :));
+plot(mdl);</code></pre><p id="0a9b4f33-7ccc-4d5c-9739-f2ff61b239a6" class="">이를 가지고 error sum을 구하였을때의 결과는 다음과 같음</p><p id="89925d67-7cf6-45bb-a2da-8a6724e4e681" class="">몇개의 결과를 제외하고 대체적으로 비슷한 결과를 보였으나 육안으로 확인하였을때 Rendered logarithmic tent의 결과가 가장 만족스러웠음. 따라서 이후의 과정에서 Rendered logarithmic tent의 결과를 사용함.</p><h3 id="0a04c986-03e6-447b-b9c1-a0a5062c318f" class="">Result</h3><ol id="fe260862-4960-4a31-9f0b-98c338556f8f" class="numbered-list" start="1"><li>Rendered linear tent: 0.1637</li></ol><ol id="4b25ead1-e881-4bbb-9de4-66cff4ac43e7" class="numbered-list" start="2"><li>Rendered logarithmic tent: 0.0026</li></ol><ol id="5401132f-c35e-4b4b-8b48-99b4b867e17b" class="numbered-list" start="3"><li>Rendered linear uniform: 0.0069</li></ol><ol id="d755b2d3-eb8e-4847-9290-be014d44838d" class="numbered-list" start="4"><li>Rendered logarithmic uniform: 0.0030</li></ol><ol id="de211dc0-c0d2-4717-99e7-965cbd4bdf50" class="numbered-list" start="5"><li>Raw linear uniform: 0.0013</li></ol><ol id="2e0385fc-d6fc-4fa5-bc6f-b0c03083daa7" class="numbered-list" start="6"><li>Raw linear tent: 0.0024</li></ol><ol id="b6a8d96d-2c1d-48fe-a281-fe09d4ddd6bf" class="numbered-list" start="7"><li>Raw logarithmic uniform: 0.0030</li></ol><ol id="77243414-04d8-498d-b0a1-56579668533a" class="numbered-list" start="8"><li>Raw logarithmic tent:0.0890</li></ol><h1 id="de10e425-069c-40d0-ad69-4bfb5dd9d854" class="">2. Tonemapping</h1><h2 id="a2bd6425-5dc1-4d67-b1cc-e9f9679d037f" class="">Photographic tonmapping</h2><p id="8d696f6c-d2d0-4536-8183-37119f9dba88" class="">과제에서 주어진 tonemapping방식을 각각에 color channel에 관하여 별도로 적용했을때의 코드는 다음과 같음</p><pre id="5a49c679-f700-4c3c-aa4a-527e3685a68c" class="code"><code>K = 0.95;
+B = 0.5; %burn
+a = 0.01; 
+[W, H, C] = size(HDR_images);
+N = W*H*C;
+sum_=0;
+for w = 1:W
+    for h = 1:H
+        for c = 1:C
+            sum_ = sum_ + log(HDR_images(w, h, c)+a);
+        end
+    end
+end
+I = exp(sum_/N);
+tone_images = zeros(W, H, C);
+for w = 1:W
+    for h = 1:H
+        for c = 1:C
+            tone_images(w, h, c) = K/I*HDR_images(w, h, c);
+        end
+    end
+end
+white = B*max(tone_images(:));
+for w = 1:W
+    for h = 1:H
+        for c = 1:C
+            tmp = tone_images(w,h,c);
+            tone_images(w, h, c) = tmp*(1+(tmp/white^2))/(1+tmp);
+        end
+    end
+end</code></pre><p id="141cab90-44f9-4521-ba02-e1ec610e535f" class="">본 코드의 결과는 다음과 같음. 이미지의 밝은 부분과 어두운 부분이 모두 source image들에 비해서 뚜렷하게 보임. 하지만 밝은 부분의 경우 다소 뿌옇게 보임.</p><figure id="056e31bf-fb3c-4732-bb24-8f23e5d8000e" class="image"><a href="https://hyeonjjung.github.io/assets/images/4/Untitled%203.png"><img style="width:576px" src="https://hyeonjjung.github.io/assets/images/4/Untitled%203.png"/></a></figure><p id="a0673752-99d3-40ef-97a0-8888982f8f40" class="">luninance channel Y에 대해서만 tonemapping을 적용할 경우 위와 비슷한 코드를 사용함. 앞뒤로 RGB 이미지를 XYZ 이미지로 변환한 후 xyY 이미지로 변환하고 다시 복구하는 작업이 추가되어있음. K = 2, B = 0.9를 사용함.</p><pre id="34354a77-6a24-4b28-8aaf-6a7367e99290" class="code"><code>XYZ = rgb2xyz(HDR_images, &#x27;Colorspace&#x27;, &#x27;linear-rgb&#x27;);
+cform = makecform(&#x27;xyz2xyl&#x27;);
+XYZ = applycform(XYZ, cform);
+...
+cform = makecform(&#x27;xyl2xyz&#x27;);
+XYZ = applycform(XYZ, cform);
+rgb = xyz2rgb(XYZ, &#x27;Colorspace&#x27;, &#x27;linear-rgb&#x27;);</code></pre><p id="f8e069af-9ba5-4461-924b-17352c242dca" class="">앞선 이미지에 비해여 밝은 부분이 조금 더 뚜렷하게 보임. 하지만 이미지의 색감이 너무 노랗게 변하여서 좋은 결과라고 할 수 없음.</p><figure id="914fd960-e450-49eb-991c-e60f9b3a69d2" class="image"><a href="https://hyeonjjung.github.io/assets/images/4/Untitled%204.png"><img style="width:576px" src="https://hyeonjjung.github.io/assets/images/4/Untitled%204.png"/></a></figure><p id="a6e67eff-cb0f-421c-97e4-056bfd3b921d" class="">결과적으로 RGB 이미지로 진행한 결과가 더 마음에 듬.</p><h2 id="2341825c-7afe-475b-ae60-dedd992e400f" class="">Tonemapping using bilateral filtering</h2><p id="7ea93bce-5730-4b8a-971c-24c31a4ab8b6" class="">앞선 알고리즘과 마찬가지로 bilateral filter를 사용한 tonemapping도 RGB 이미지를 사용한 경우와 밝기값만을 사용한 경우 모두 진행하였음.</p><pre id="164fa7d6-84c0-4a1a-8aa8-c35f57905fce" class="code"><code>% 1. Compute the log intensitiy
+L = log(HDR_images);
+% 2. Compute the base layer using bilatering filtering
+B = imbilatfilt(L);
+% 3. Compute the detail layer
+D = L - B;
+% 4. Apply an offset and a scale S to the base
+S = 0.15;
+B = S * (B-max(B(:)));
+% 5. Reconstruct the intensity
+tonemapping_images = exp(B + D);</code></pre><p id="4eb555b2-4cae-4b72-ba63-5805f9e39dad" class="">이에 대한 결과는 다음과 같음. 앞선 결과들에 비해서 밝은 부분과 어두운 부분 모두 잘 보임. 하지만 이미지의 채도가 낮아진 것을 볼 수 있음.</p><figure id="d96b0bd7-b8fa-467b-828d-5ce75f0161ab" class="image"><a href="https://hyeonjjung.github.io/assets/images/4/Untitled%205.png"><img style="width:576px" src="https://hyeonjjung.github.io/assets/images/4/Untitled%205.png"/></a></figure><p id="493bce02-4f52-45cc-9aae-479e9990f9b0" class="">이전 알고리즘과 마찬가지로 전체적인 구현을 비슷하나 앞뒤로 이미지의 color space를 RGB에서 xyY로 변환하는 과정이 붙음. S = 0.18를 사용하였음. 이에 대한 결과는 다음과 같음. 마찬가지로 어두운 부분과 밝은 부분의 결과가 매우 좋으나 색감이 매우 붉어졌음.</p><figure id="d5d47cea-e2ee-42d8-b2b9-5e8b10448d41" class="image"><a href="https://hyeonjjung.github.io/assets/images/4/Untitled%206.png"><img style="width:576px" src="https://hyeonjjung.github.io/assets/images/4/Untitled%206.png"/></a></figure><p id="94b79021-7032-4d93-89f8-76a826873ea0" class="">따라서 RGB 이미지로 진행한 결과가 더 마음에 듬.</p></div></article></body></html>
