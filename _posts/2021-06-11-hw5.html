@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Homework Assignment 5</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="60001577-6430-49bc-b80e-8141718b3e66" class="page sans"><header><h1 class="page-title">Homework Assignment 5</h1></header><div class="page-body"><p id="894b16b5-6ec5-49a5-aefb-71fb562dcbe0" class="">Explore the lightfields, focal stacks, and depth from defocus</p><ul id="79ad1fce-dcdc-4eee-8802-647b95d7537f" class="bulleted-list"><li>Synthesize one from a light field image captured with a plenoptic camera</li></ul><ul id="49b60685-1430-4f35-8fb2-e8c3fdc153c6" class="bulleted-list"><li>From the synthetic focal stack, you will compute an all-in-focus image and a depth map using depth from defocus</li></ul><h1 id="7bba3531-ab77-4deb-9149-a002c87b283c" class="">Lightfield rendering, focal stacks, and depth from defocus</h1><h2 id="4f5b899a-4344-4e42-a127-6534eb897cd7" class="">Initials</h2><p id="de570496-bcb2-4ab4-93b9-235fa3dc89f1" class="">먼저 주어진 lightfield 이미지를 사용하기 용이하게 5D matrix 형태로 변환해준다.</p><pre id="22a0a535-679e-48cf-9f51-f1996be53bb9" class="code"><code>lensletSize = 16;
+image5d = zeros(lensletSize, lensletSize, H/lensletSize, W/lensletSize,3); % (u, v, s, t, c)
+[u, v, s, t, c] = size(image5d);
+for i = 1:u
+    for j = 1:v
+        for k = 1:s
+            for l = 1:t
+                image5d(i, j, k, l, :) = image((k-1)*u+i,(l-1)*v+j,:);
+            end
+        end
+    end
+end
+image5d = image5d/255;</code></pre><h2 id="9228019b-82b9-481d-8270-71cc196ac464" class="">Sub-aperture views</h2><p id="e8d447d4-2737-4fa4-889c-0eb8f5b8d43b" class="">두번째로는 u, v를 고정하고 s, t 값을 변화하면서 다양한 aperture view에 따른 모자이크 이미지로 재배열한다.</p><pre id="0a41def9-2e4d-4267-8d48-5ea74ed8c6e7" class="code"><code>mosaic = zeros(H, W, C);
+for i = 1:u
+    for j = 1:v
+        for k = 1:s
+            for l = 1:t
+                mosaic(k+(i-1)*s,l+(j-1)*t,:) = image5d(i, j, k, l, :);
+            end
+        end
+    end
+end</code></pre><p id="8411bda4-723d-4db0-8fa7-69bd239de3ce" class="">이에 대한 결과는 다음과 같다.</p><figure id="5da1a883-0140-4c7a-9961-66a27ec521fc" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled.png"><img style="width:11200px" src="https://hyeonjjung.github.io/assets/images/5/Untitled.png"/></a></figure><h2 id="13104ec8-2ad7-46de-8dbe-5e1edb81706a" class="">Refocusing and focal-stack generation</h2><p id="ebada3c7-af35-4858-af06-a8905a302c1d" class="">위에서 재배열한 이미지를 토대로 다양한 focal lengh를 가진 이미지들의 집한 focal-stack를 생성한다. </p><figure id="dd922858-21e6-4f72-a889-7d0a8b7e0ee4" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>I</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mo>∫</mo><mi>u</mi></msub><msub><mo>∫</mo><mi>v</mi></msub><mi>L</mi><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo separator="true">,</mo><mi>s</mi><mo>+</mo><mi>d</mi><mi>u</mi><mo separator="true">,</mo><mi>t</mi><mo>+</mo><mi>d</mi><mi>v</mi><mo stretchy="false">)</mo><mi>d</mi><mi>v</mi><mi>d</mi><mi>u</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">I(s, t, c, d) = \int_u\int_vL(u, v, s+du, t+dv)dvdu.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.27195em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.6105579999999999em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.6105579999999999em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">d</span><span class="mord mathnormal">u</span><span class="mord">.</span></span></span></span></span></div></figure><p id="d0fb6955-aaa9-425a-8c06-f144ea86449e" class="">앞선 수식을 통해서 shift된 s, t에 대하여 u, v의 평균값을 구하면 refocus된 이미지를 만들 수 있다. 이때 d의 값을 변화시키면서 다양한 focal length에 대한 이미지를 생성할 수 있다. 이에 대한 코드는 다음과 같다.</p><pre id="e1519284-cec3-4ab6-8d8e-5002fcce0c3b" class="code"><code>refocused_image = zeros(s, t, c);
+d_list = [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8];
+refocused_images = cell(7, 1);
+for d = 1:7
+    for i = 1:u-1
+        for j = 1:v-1
+            tmp = mosaic((i-1)*s+1:(i-1)*s+s,(j-1)*t+1:(j-1)*t+t,:);
+            F = griddedInterpolant(tmp);
+            xq = (1:s)+d_list(d)*i;
+            yq = (1:t)-d_list(d)*j;
+            zq = (1:c);
+            vq = F({xq, yq, zq});
+            refocused_image = refocused_image + vq;
+        end
+    end
+    refocused_image = refocused_image/(u*v);
+    refocused_images{d} = refocused_image;
+    imwrite(refocused_image, &quot;refocused_image_&quot;+d_list(d)+&quot;.png&quot;);
+end</code></pre><p id="fc627448-a585-4ba3-add3-f9d2dfa84c59" class="">0부터 1.8까지 총 7개의 d값을 사용하였으며 matlab의 <code>griddedInterpolant</code> 함수를 사용하여 이미지를 shift하였다. 이때 한가지 유의해야하는 점은 shift할 mesh를 설정할때 shift되는 값의 x와 y의 부호를 반대로 해주는 것이다. 이에 대한 결과 이미지들은 다음과 같다.</p><div id="cbc98033-9190-4bb6-8109-ea04897ce6b4" class="column-list"><div id="9d2aa473-f5f9-48a5-a2b3-402133bc10fb" style="width:50%" class="column"><figure id="01e65254-abce-48dd-b4a6-249711f11e09" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%201.png"><img style="width:432px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%201.png"/></a><figcaption>d = 0</figcaption></figure><figure id="1e1e2c0f-6228-4891-9156-b473bd4c9b31" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%202.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%202.png"/></a><figcaption>d = 0.6</figcaption></figure><figure id="bb420cf0-50e7-4206-8544-a0fa4a055b72" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%203.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%203.png"/></a><figcaption>d = 1.2</figcaption></figure><figure id="68e0e448-e569-4de4-8f40-29b5ab904807" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%204.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%204.png"/></a><figcaption>d = 1.8</figcaption></figure></div><div id="5ad1be90-1d6e-4338-9b6e-a65d1452f1a2" style="width:50%" class="column"><figure id="88915025-a437-4ed5-ad6f-1e58a8de6253" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%205.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%205.png"/></a><figcaption>d = 0.3</figcaption></figure><figure id="4cf81a16-219c-4e01-9e10-b56ffec0894f" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%206.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%206.png"/></a><figcaption>d = 0.9</figcaption></figure><figure id="dc4f41c0-ea50-4f81-98e4-3e79e06266e3" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%207.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%207.png"/></a><figcaption>d = 1.5</figcaption></figure><p id="1cc7a9f8-0829-4fd8-bc59-97d185f058b7" class="">
+</p></div></div><h2 id="7739e0cf-4c50-41e7-ab68-07fc07c07192" class="">All-focus image and depth from defocus</h2><p id="01c7f153-91ee-43ff-968c-54946d885cf7" class="">마지막으로 앞서 생성한 focal-stack을 가지고 all-focus 이미지와 depth map를 만들어준다.</p><p id="2cd3136b-dfae-4ef8-9487-1436e323f4a2" class="">all-focus 이미지의 경우 가우시안 필터를 통해서 sharp한 영역을 구하여 모든 stack에서 sharp한 영역에 높은 weight을 주어서 이미지를 합하면 된다.  depth map의 경우 all-focus 이미지를 생성할때 구한 sharp한 영역에 대한 weight를 가지고 d에 대해서 합하면 된다. 이때 이미지의 sharp한 영역을 구할때 적용한 가우시안 필터의 시그마(sigma1)는 2, sharp한 영역을 확장시키기 위한 가우시안 필터의 시그마(sigma2)는 4를 사용하였다. </p><pre id="442fd8b3-bd27-4bda-a69f-56d7acfdf7bf" class="code"><code>sharpness_sum = zeros(s, t);
+weight_sum = zeros(s, t, c);
+depth_sum = zeros(s,t);
+for p = 1:7
+    refocused_image = refocused_images{p};
+    XYZ = rgb2xyz(refocused_image);
+    Y = XYZ(:,:,2);
+    sigma1 = 2; %0.2
+    sigma2 = 4; %2
+    low = imgaussfilt(Y, sigma1);
+    high = Y-low;
+    sharpness = imgaussfilt(high.^2, sigma2);
+    for i = 1:3
+        weight_sum(:,:,i) = weight_sum(:,:,i) + sharpness.*refocused_image(:,:,i);
+    end
+    sharpness_sum = sharpness_sum + sharpness;
+    depth_sum = depth_sum + sharpness.*d_list(p);
+end
+all_focus_image = weight_sum./sharpness_sum;
+depth_map = depth_sum./sharpness_sum;</code></pre><p id="268c14bb-6362-4f0c-b55f-0d94178b0816" class="">sigma1과 sigma2를 변경했을때의 all focus 이미지와 depth map의 결과는 각각 다음과 같다.</p><div id="c685921c-e7c8-4f69-abb2-f1eeb657695c" class="column-list"><div id="a1c5ec84-5a77-457a-be9f-927fa989a90a" style="width:50%" class="column"><figure id="b50faacb-0b0b-4998-881c-d90325f3f30a" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%208.png"><img style="width:336px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%208.png"/></a><figcaption>all focus image, sigma1 = 2, sigma2 = 1</figcaption></figure><figure id="b64247d8-a7d6-4589-b7e3-c15a08b790eb" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%209.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%209.png"/></a><figcaption>all focus image, sigma1 = 2, sigma2 = 4</figcaption></figure><figure id="bea064e1-8699-4ae4-b959-1c36fc088d9e" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%2010.png"><img style="width:698px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%2010.png"/></a><figcaption>all focus image, sigma1 =0.5, sigma2 =4</figcaption></figure></div><div id="c1c62e7a-598e-4b5f-802c-fa74e76ae0fc" style="width:50%" class="column"><figure id="f8ceff3c-e535-45a1-adb0-dceb9b48dde4" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%2011.png"><img style="width:698px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%2011.png"/></a><figcaption>depth map, sigma1 = 2, sigma2 = 1</figcaption></figure><figure id="cb6f6054-263d-45f9-9f1f-e6f3f4924730" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%2012.png"><img style="width:700px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%2012.png"/></a><figcaption>depth map, sigma1 = 2, sigma2 = 4</figcaption></figure><figure id="4e227f3b-cc40-4627-8eab-49a2d2a45d63" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%2013.png"><img style="width:698px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%2013.png"/></a><figcaption>depth map, sigma1= 0.5, sigma2 = 4</figcaption></figure></div></div><p id="24238ad8-e57c-479c-b21c-52165d2f03fa" class="">all focus 이미지에서는 각각의 결과 차이가 명확하게 차이가 나지는 않지만 sigma2의 크기가 작을 수록 object 외각에 왜곡이 발생했다. sigma1의 크기가 작을때에는 depth map에서 체스판의 밑부분이 뚜렷하게 보이지 않았다.</p><h3 id="16da0d1a-8631-46a5-8d38-b6375168af47" class="">Capture and refocus a light field of your own using a standard camera</h3><p id="d3621527-74ca-4866-8393-bddc19304e49" class="">iPhone11 pro를 사용하여 하나의 카메라를 가지고 여러 location에서 같은 object를 촬영하여 lightfield 이미지를 만들어보았다. 아래 사진과 같이 총 9개의 3x3 사이즈의 이미지를 촬영하고 </p><figure id="14b9cf6c-a75b-444d-a2cd-af7649efb491" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%2014.png"><img style="width:976px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%2014.png"/></a></figure><p id="0cd2b9cb-ae03-4bb3-9ccb-f8d4abe8f161" class="">이를 이용하여 다음 이미지들과 같이 mosaic 이미지를 만들고 refocusing 이미지를 만들어주었다.</p><div id="b08ba984-8787-4c0b-864a-b1fac36e908b" class="column-list"><div id="0dba1131-ce6b-437f-b542-fdd1bc4d5a34" style="width:50%" class="column"><figure id="929cc336-0390-46d8-83fb-83f952a218b5" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%2015.png"><img style="width:336px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%2015.png"/></a></figure></div><div id="9e04be5a-da6d-47a2-9686-9230f682ac98" style="width:50%" class="column"><figure id="b73e29e1-b844-4df7-849f-046df764308f" class="image"><a href="https://hyeonjjung.github.io/assets/images/5/Untitled%2016.png"><img style="width:336px" src="https://hyeonjjung.github.io/assets/images/5/Untitled%2016.png"/></a></figure></div></div><p id="23bf07d3-3eb6-4e3b-8312-653a221cf80e" class="">lightfield 이미지를 촬영하기 위한 전문 장비없이 직접 사람손으로 사진을 촬영해서 그런지 완벽한 lightfield 이미지를 얻을 수 없었다. 일반적인 카메라로 lightfield 이미지를 만들기 위해서는 레고나 외부 렌즈와 같이 추가적인 장비가 필요할 것이라고 생각된다</p></div></article></body></html>
